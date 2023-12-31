@@ -22,7 +22,7 @@ const HeroSection = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Hi, I am SIEON",
+                "SIEON",
                 1000,
                 "Web Developer",
                 1000,
@@ -35,8 +35,9 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            주변에서 발생하는 문제를 관찰하고 이를 해결하기 위해 가장 좋은
+            방법을 고민합니다. 프로그래밍은 제가 가장 좋아하는 도구입니다. 코드
+            몇 줄로 더 나은 세상을 만들 수 있으니까요! 😊
           </p>
           <div>
             <Link
@@ -46,7 +47,7 @@ const HeroSection = () => {
               Hire Me
             </Link>
             <Link
-              href="/"
+              href="/files/신시언 이력서.pdf"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
@@ -63,7 +64,7 @@ const HeroSection = () => {
         >
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
             <Image
-              src="/images/bonobono.jpg"
+              src="/images/profile-pic.png"
               alt="profile image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={300}
