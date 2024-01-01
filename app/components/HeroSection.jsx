@@ -4,6 +4,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import AboutSection from "./AboutSection";
 
 const HeroSection = () => {
   return (
@@ -36,15 +37,16 @@ const HeroSection = () => {
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             주변에서 발생하는 문제를 관찰하고 이를 해결하기 위해 가장 좋은
-            방법을 고민합니다. 프로그래밍은 제가 가장 좋아하는 도구입니다. 코드
-            몇 줄로 더 나은 세상을 만들 수 있으니까요! 😊
+            방법을 고민합니다. <br></br>프로그래밍은 제가 가장 좋아하는
+            도구입니다. 코드 몇 줄로 더 나은 세상을 만들 수 있으니까요😊
           </p>
+          <AboutSection />
           <div>
             <Link
               href="/#contact"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
-              Hire Me
+              Contact Me
             </Link>
             <Link
               href="/files/신시언 이력서.pdf"
