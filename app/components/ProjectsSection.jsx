@@ -11,7 +11,6 @@ const projectsData = [
     description: "Mobile Trading System Renewal Project",
     image: "/images/projects/1.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
     previewUrl: "/",
   },
   {
@@ -20,8 +19,7 @@ const projectsData = [
     description: "NodeJs Chat Server for MTS Service",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    previewUrl: "/projects/chat",
   },
   {
     id: 3,
@@ -29,7 +27,6 @@ const projectsData = [
     description: "NodeJS Push Server and Admin for MTS Service",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
     previewUrl: "/",
   },
   {
@@ -38,7 +35,6 @@ const projectsData = [
     description: "NestJS Auto Scrapper of Apartment price Service",
     image: "/images/projects/4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
     previewUrl: "/",
   },
   {
@@ -47,7 +43,6 @@ const projectsData = [
     description: "SwiftUI Subway Alarm App",
     image: "/images/projects/5.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
     previewUrl: "/",
   },
   {
@@ -56,7 +51,6 @@ const projectsData = [
     description: "PyQT5 Office Automation Programs",
     image: "/images/projects/6.png",
     tag: ["All", "Window Program"],
-    gitUrl: "/",
     previewUrl: "/",
   },
 ];
