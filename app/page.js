@@ -1,4 +1,4 @@
-import AboutSection from "./components/AboutSection";
+"use client";
 import AchievementsSection from "./components/AchievementsSection";
 import EmailSection from "./components/EmailSection";
 import HeroSection from "./components/HeroSection";
