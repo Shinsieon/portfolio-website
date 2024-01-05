@@ -1,4 +1,3 @@
-"use client";
 import fs from "fs";
 
 const logFilePath = "./visitorCount.log";

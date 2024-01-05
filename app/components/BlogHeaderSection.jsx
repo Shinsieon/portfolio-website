@@ -21,7 +21,14 @@ const BlogHeaderSection = () => {
               repeat={Infinity}
             />
           </h3>
-          <span className="text-gray-300">Welcome and be happy coders</span>
+          <span className="text-gray-300">
+            <TypeAnimation
+              sequence={["Welcome and be happy coders :)", 1000]}
+              wrapper="span"
+              speed={5}
+              repeat={Infinity}
+            />
+          </span>
         </motion.div>
       </div>
     </section>
