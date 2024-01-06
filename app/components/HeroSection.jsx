@@ -14,7 +14,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className="col-span-10 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
@@ -36,9 +36,9 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            주변에서 발생하는 문제를 관찰하고 이를 해결하기 위해 가장 좋은
-            방법을 고민합니다. <br></br>프로그래밍은 제가 가장 좋아하는
-            도구입니다. 코드 몇 줄로 더 나은 세상을 만들 수 있으니까요😊
+            I observe issues occurring around me and contemplate the best ways
+            to solve them. Programming is my favorite tool, as with just a few
+            lines of code, I can create a better world.
           </p>
           <AboutSection />
           <div>
@@ -64,7 +64,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+          {/* <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] relative">
             <Image
               src="/images/profile-pic.png"
               alt="profile image"
@@ -72,7 +72,7 @@ const HeroSection = () => {
               width={300}
               height={300}
             />
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

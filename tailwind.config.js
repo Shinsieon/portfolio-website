@@ -21,5 +21,5 @@ module.exports = withMT({
       secondary: colors.red,
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 });

@@ -30,16 +30,20 @@ const TABS = [
     value: "all",
   },
   {
-    label: "Monitored",
-    value: "monitored",
+    label: "Algorithms",
+    value: "Algorithms",
   },
   {
-    label: "Unmonitored",
-    value: "unmonitored",
+    label: "Javascript",
+    value: "Javascript",
+  },
+  {
+    label: "Python",
+    value: "Python",
   },
 ];
 
-const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
+const TABLE_HEAD = ["Title", "Tag", "Skills", "Created", "View"];
 
 const TABLE_ROWS = [
   {
@@ -91,8 +95,13 @@ const TABLE_ROWS = [
 
 const BlogTableSection = () => {
   return (
-    <Card className="text-white">
-      <CardHeader floated={false} shadow={false} className="rounded-none">
+    <Card className="text-white mt-5" color="transparent" variant="gradient">
+      <CardHeader
+        floated={false}
+        shadow={false}
+        className="rounded py-2 border-white"
+        color="transparent"
+      >
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <Tabs value="all" className="w-full md:w-max">
             <TabsHeader>
@@ -105,24 +114,25 @@ const BlogTableSection = () => {
           </Tabs>
           <div className="w-full md:w-72">
             <Input
+              color="white"
               label="Search"
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+              icon={<MagnifyingGlassIcon className="h-5 w-5 text-white" />}
             />
           </div>
         </div>
       </CardHeader>
-      <CardBody className="overflow-scroll px-0">
-        <table className="mt-4 w-full min-w-max table-auto text-left">
+      <CardBody className="overflow-scroll px-0 scrollbar-hide whitespace-nowrap">
+        <table className="mt-4 w-full min-w-max table-auto text-left ">
           <thead>
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th
                   key={head}
-                  className="cursor-pointer border-y border-blue-gray-100 bg-blue-gray-50/50 p-4 transition-colors hover:bg-blue-gray-50"
+                  className="cursor-pointer border-y border-white p-4 transition-colors"
                 >
                   <Typography
                     variant="small"
-                    color="blue-gray"
+                    color="white"
                     className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
                   >
                     {head}{" "}
@@ -150,14 +160,14 @@ const BlogTableSection = () => {
                         <div className="flex flex-col">
                           <Typography
                             variant="small"
-                            color="blue-gray"
+                            color="white"
                             className="font-normal"
                           >
                             {name}
                           </Typography>
                           <Typography
                             variant="small"
-                            color="blue-gray"
+                            color="white"
                             className="font-normal opacity-70"
                           >
                             {email}
@@ -169,14 +179,14 @@ const BlogTableSection = () => {
                       <div className="flex flex-col">
                         <Typography
                           variant="small"
-                          color="blue-gray"
+                          color="white"
                           className="font-normal"
                         >
                           {job}
                         </Typography>
                         <Typography
                           variant="small"
-                          color="blue-gray"
+                          color="white"
                           className="font-normal opacity-70"
                         >
                           {org}
@@ -189,7 +199,7 @@ const BlogTableSection = () => {
                           variant="ghost"
                           size="sm"
                           value={online ? "online" : "offline"}
-                          color={online ? "green" : "blue-gray"}
+                          color={online ? "green" : "white"}
                         />
                       </div>
                     </td>
@@ -217,14 +227,14 @@ const BlogTableSection = () => {
         </table>
       </CardBody>
       <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-        <Typography variant="small" color="blue-gray" className="font-normal">
+        <Typography variant="small" color="white" className="font-normal">
           Page 1 of 10
         </Typography>
         <div className="flex gap-2">
-          <Button variant="outlined" size="sm">
+          <Button variant="outlined" size="sm" color="cyan">
             Previous
           </Button>
-          <Button variant="outlined" size="sm">
+          <Button variant="outlined" size="sm" color="cyan">
             Next
           </Button>
         </div>

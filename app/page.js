@@ -1,5 +1,6 @@
 "use client";
 import AchievementsSection from "./components/AchievementsSection";
+import BlogSection from "./components/BlogSection";
 import EmailSection from "./components/EmailSection";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -11,6 +12,7 @@ export default function Home() {
       <div className="container mx-auto px-12 py-20">
         <HeroSection />
         <AchievementsSection />
+        <BlogSection />
         {/* <AboutSection /> */}
         <ProjectsSection />
         <EmailSection />
