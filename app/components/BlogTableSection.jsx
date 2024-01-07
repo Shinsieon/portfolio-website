@@ -199,7 +199,7 @@ const BlogTableSection = () => {
                           variant="ghost"
                           size="sm"
                           value={online ? "online" : "offline"}
-                          color={online ? "green" : "white"}
+                          color={online ? "green" : "blue-gray"}
                         />
                       </div>
                     </td>

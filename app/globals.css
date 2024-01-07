@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@font-face {
+  font-family: "ios";
+  src: url("../public/fonts/sf_pro.otf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

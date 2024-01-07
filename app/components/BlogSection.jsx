@@ -12,8 +12,8 @@ const BlogSection = () => {
           Look around My Blog {">"}
         </Link>
         <span className="text-center text-1xl text-white mt-4 mb-8 md:mb-12">
-          The place where I note what I've learned and the things I've been up
-          to
+          The place where I note what I&apos;ve learned and the things I&apos;ve
+          been up to
         </span>
       </div>
     </section>
