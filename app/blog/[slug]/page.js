@@ -16,7 +16,7 @@ export default async function Page({ params }) {
           remarkPlugins={[remarkGfm]} // Allows us to have embedded HTML tags in our markdown
           components={{
             h1(props) {
-              return <h1 className="text-2xl py-2">{props.children}</h1>;
+              return <h1 className="text-3xl py-2">{props.children}</h1>;
             },
             blockquote({ children, ...props }) {
               return (
