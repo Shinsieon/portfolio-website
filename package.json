@@ -15,6 +15,7 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "next": "14.0.4",
+    "next-themes": "^0.2.1",
     "next-videos": "^1.4.1",
     "react": "^18",
     "react-animated-numbers": "^0.17.1",

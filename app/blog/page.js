@@ -1,6 +1,5 @@
 import BlogHeaderSection from "../components/BlogHeaderSection";
 import BlogTableSection from "../components/BlogTableSection";
-import VisitorSection from "../components/VisitorSection";
 
 export default function Home() {
   return (

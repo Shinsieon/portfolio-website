@@ -10,23 +10,24 @@ import Image from "next/image";
 const postsDirectory = join(process.cwd(), "app/blog/posts");
 
 export default async function Page({ params }) {
-  console.log(params);
   const { title, date, content } = await getPostData(params.slug);
   return (
-    <article className="flex min-h-screen flex-col bg-[#121212] px-12  ">
+    <article className="flex min-h-screen flex-col px-12  ">
       <div className="container mx-auto px-12 py-12 text-white  font-ios">
-        <h2 className="text-4xl font-extrabold dark:text-white mb-2">
-          {title}
-        </h2>
-        <p className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-5">
-          {date}
-        </p>
+        <div className="w-full h-10 my-10">
+          <h2 className="text-4xl font-extrabold dark:text-white mb-2">
+            {title}
+          </h2>
+          <p className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-5">
+            {date}
+          </p>
+        </div>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]} // Allows us to have embedded HTML tags in our markdown
           components={{
             h1(props) {
               return (
-                <h1 className="bg-blue-100 text-blue-800 text-2xl font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 mb-5 inline-block">
+                <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                   {props.children}
                 </h1>
               );
@@ -76,6 +77,17 @@ export default async function Page({ params }) {
                 height={300}
               />
             ),
+            a: (props) => {
+              return (
+                <a
+                  href={props.href}
+                  target="_blank"
+                  className="font-medium text-blue-600 underline dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700 hover:no-underline"
+                >
+                  {props.children}
+                </a>
+              );
+            },
           }}
         >
           {content}
@@ -94,7 +106,6 @@ export async function getPostData(id) {
   const fullPath = join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content, desc } = matter(fileContents);
-  console.log(desc);
   return {
     title: data.title,
     date: data.date,
