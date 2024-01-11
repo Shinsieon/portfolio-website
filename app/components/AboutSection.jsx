@@ -6,19 +6,9 @@ import VideoPlayer from "./VideoPlayer";
 
 const TAB_DATA = [
   {
-    title: "Love",
-    id: "love",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Sports⚽</li>
-        <li>Movie🍿</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Skills",
+    title: "skills",
     id: "skills",
-    content: (
+    component: (
       <ul className="list-disc pl-2">
         <li>Node.js</li>
         <li>Mysql</li>
@@ -33,7 +23,7 @@ const TAB_DATA = [
   {
     title: "Education",
     id: "education",
-    content: (
+    component: (
       <ul className="list-disc pl-2">
         <li>경희대학교 산업경영공학과 졸업</li>
         <li>한국디지털미디어고등학교 해킹방어과 졸업</li>
@@ -43,7 +33,7 @@ const TAB_DATA = [
   {
     title: "Certifications",
     id: "certifications",
-    content: (
+    component: (
       <ul className="list-disc pl-2">
         <li>AWS Cloud Practitioner</li>
         <li>Google Professional Cloud Developer</li>
@@ -53,67 +43,60 @@ const TAB_DATA = [
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("love");
-  const [isPending, startTransition] = useTransition();
+  const [tab, setTab] = useState("skills");
 
   const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    setTab(id);
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-4 px-4 xl:gap-16 sm:py-2 ">
-        {/* <VideoPlayer /> */}
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          {/* <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base text:xl font-bold text-blue-400">
-            Thinking about why
-          </p>
-          <p className="text-base lg:text-lg">
-            이렇게 개발하는게 정말 사용자가 우리 서비스를 사용하는데 도움을
-            줄까? 혹은 더 나은 UI, 알고리즘이 있는데 왜 이렇게 해야 하지? 라는
-            의문을가지고 합리적인 코드를 지향합니다.
-          </p>
-          <p className="font-bold text-blue-400">Trying to be best</p>
-          <p className="text-base lg:text-lg">
-            간단하게 짠 소스 한 줄로 인해 동료들 이 힘들어할수도, 고객에게
-            피해를 줄 수 도 있습니다. 한 줄을 짜더라도 신중하게 짜기 위해
-            노력합니다.
-          </p> */}
-          <div className="flex flex-row justify-start">
-            <TabButton
-              selectTab={() => handleTabChange("love")}
-              active={tab === "love"}
-            >
-              Love{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              Skills{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              Certifications{" "}
-            </TabButton>
-          </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+      <ul class="flex flex-wrap -mb-px">
+        <li class="me-2">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              handleTabChange("skills");
+            }}
+            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+          >
+            Skills
+          </a>
+        </li>
+        <li class="me-2">
+          <a
+            href="#"
+            class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500"
+            aria-current="page"
+          >
+            Dashboard
+          </a>
+        </li>
+        <li class="me-2">
+          <a
+            href="#"
+            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+          >
+            Settings
+          </a>
+        </li>
+        <li class="me-2">
+          <a
+            href="#"
+            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+          >
+            Contacts
+          </a>
+        </li>
+        <li>
+          <a class="inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500">
+            Disabled
+          </a>
+        </li>
+      </ul>
+      <div>{TAB_DATA.find((t) => t.id === tab).component}</div>
+    </div>
   );
 };
 
