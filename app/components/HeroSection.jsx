@@ -16,9 +16,9 @@ const HeroSection = () => {
           className="col-span-10 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-            Hello I am Sieon, <br></br>Who loves Code.
+            Hello I am Sieon, <br></br>I Love Clean Codes.
           </h1>
-          <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+          <p className="mb-6 text-lg text-gray-500 lg:text-xl dark:text-gray-400">
             I observe issues occurring around me and contemplate the best ways
             to solve them. Programming is my favorite tool, as with just a few
             lines of code, I can create a better world.
