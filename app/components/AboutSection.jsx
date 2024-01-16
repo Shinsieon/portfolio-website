@@ -1,17 +1,32 @@
 "use client";
 import React, { useTransition, useState } from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement } from "chart.js";
+Chart.register(ArcElement);
 
+const data = {
+  labels: ["Red", "Green", "Yellow"],
+  datasets: [
+    {
+      data: [300, 50, 100],
+      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+    },
+  ],
+};
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     component: (
-      <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800" role="tabpanel">
-        <p class="text-sm text-gray-500 dark:text-gray-400">
-          This is some placeholder content the{" "}
-          <strong class="font-medium text-gray-800 dark:text-white">asd</strong>
-          text field
-        </p>
+      <div
+        className="p-4 rounded-lg bg-gray-50  dark:bg-gray-800"
+        role="tabpanel"
+      >
+        <h2>Doughnut Example</h2>
+        <div className="w-[200px]">
+          <Doughnut data={data} width={50} height={50} />
+        </div>
       </div>
     ),
   },
