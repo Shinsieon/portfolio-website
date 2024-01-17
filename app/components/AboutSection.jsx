@@ -24,7 +24,7 @@ const TAB_DATA = [
         role="tabpanel"
       >
         <h2>Doughnut Example</h2>
-        <div className="w-[200px]">
+        <div className="w-[100px]">
           <Doughnut data={data} width={50} height={50} />
         </div>
       </div>
