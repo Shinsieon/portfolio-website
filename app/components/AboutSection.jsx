@@ -20,7 +20,7 @@ const TAB_DATA = [
     id: "skills",
     component: (
       <div
-        className="p-4 rounded-lg bg-gray-50  dark:bg-gray-800"
+        className="p-3 rounded-lg bg-gray-50  dark:bg-gray-800"
         role="tabpanel"
       >
         <h2>Doughnut Example</h2>
