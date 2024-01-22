@@ -1,28 +1,37 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement } from "chart.js";
-Chart.register(ArcElement);
+import { Doughnut, Bar } from "react-chartjs-2";
+import {
+  Chart,
+  ArcElement,
+  Tooltip,
+  Title,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from "chart.js";
+import DoughnutChart from "./DoughnutChart";
+import HorizontalLineChart from "./HorizontalLineChart";
+Chart.register(
+  ArcElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Tooltip,
+  Title,
+  Legend
+);
 
-const data = {
-  labels: ["Javascript", "Typescript", "Python"],
-  datasets: [
-    {
-      data: [50, 25, 25],
-      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-    },
-  ],
-};
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     component: (
       <div className="p-3 rounded-lg" role="tabpanel">
-        <h2>Skills I have</h2>
-        <div className="w-[300px] h-[300px]">
-          <Doughnut data={data} width={300} height={300} />
+        <div className="w-full flex justify-center">
+          <DoughnutChart />
+          <HorizontalLineChart />
         </div>
       </div>
     ),

@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AboutSection from "./AboutSection";
+import ChartComponent from "./VisitorSection";
 
 const HeroSection = () => {
   return (
@@ -19,10 +20,11 @@ const HeroSection = () => {
           <p className="mb-6 text-lg text-gray-500 lg:text-xl dark:text-gray-400">
             I observe issues occurring around me and contemplate the best ways
             to solve them. Programming is my favorite tool, as with just a few
-            lines of code, I can create a better world.
+            lines of code, I can make a better world.
           </p>
           <AboutSection />
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
