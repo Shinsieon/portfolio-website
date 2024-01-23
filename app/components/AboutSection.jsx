@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import DoughnutChart from "./DoughnutChart";
 import HorizontalLineChart from "./HorizontalLineChart";
+import Education from "./Education";
 Chart.register(
   ArcElement,
   BarElement,
@@ -40,10 +41,11 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     component: (
-      <ul className="list-disc pl-2">
-        <li>경희대학교 산업경영공학과 졸업</li>
-        <li>한국디지털미디어고등학교 해킹방어과 졸업</li>
-      </ul>
+      <div className="p-3 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-center">
+          <Education />
+        </div>
+      </div>
     ),
   },
   {

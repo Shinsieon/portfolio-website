@@ -16,6 +16,7 @@ const doughnutData = {
 };
 const doughnutOptions = {
   plugins: {
+    responsive: true,
     legend: {
       display: true,
       position: "bottom",
@@ -41,7 +42,7 @@ const doughnutOptions = {
 
 const DoughnutChart = () => {
   return (
-    <div className="w-[50%]">
+    <div className="w-[300px] h-[300px]">
       <Doughnut
         data={doughnutData}
         options={doughnutOptions}
