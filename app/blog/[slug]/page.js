@@ -5,12 +5,16 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import matter from "gray-matter";
+
 import Image from "next/image";
 
 const postsDirectory = join(process.cwd(), "app/blog/posts");
 
 export default async function Page({ params }) {
-  const { title, date, content } = await getPostData(params.slug);
+  const { title, date, content } = await getPostData(
+    postsDirectory,
+    params.slug
+  );
   return (
     <article className="flex min-h-screen flex-col px-12  ">
       <div className="container mx-auto px-12 py-12 text-white  font-ios">
@@ -102,6 +106,7 @@ export async function generateStaticParams() {
     slug: file.slug,
   }));
 }
+
 export async function getPostData(id) {
   const fullPath = join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -109,6 +114,9 @@ export async function getPostData(id) {
   return {
     title: data.title,
     date: data.date,
+    skills: data.skills,
+    cover_image: data.cover_image,
+    viewed: data.viewed,
     content,
   };
 }

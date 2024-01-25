@@ -1,12 +1,9 @@
 "use client";
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import {
   MagnifyingGlassIcon,
   ChevronUpDownIcon,
 } from "@heroicons/react/24/outline";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
 import {
   Card,
   CardHeader,
@@ -20,8 +17,6 @@ import {
   TabsHeader,
   Tab,
   Avatar,
-  IconButton,
-  Tooltip,
 } from "@material-tailwind/react";
 
 const TABS = [
@@ -43,57 +38,25 @@ const TABS = [
   },
 ];
 
-const TABLE_HEAD = ["Title", "Tag", "Skills", "Created", "View"];
-
-const TABLE_ROWS = [
-  {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
-    name: "John Michael",
-    email: "john@creative-tim.com",
-    job: "Manager",
-    org: "Organization",
-    online: true,
-    date: "23/04/18",
+const TABLE_HEAD = ["Title", "Skills", "Created", "View"];
+const options = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
   },
-  {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
-    name: "Alexa Liras",
-    email: "alexa@creative-tim.com",
-    job: "Programator",
-    org: "Developer",
-    online: false,
-    date: "23/04/18",
-  },
-  {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
-    name: "Laurent Perrier",
-    email: "laurent@creative-tim.com",
-    job: "Executive",
-    org: "Projects",
-    online: false,
-    date: "19/09/17",
-  },
-  {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-    name: "Michael Levi",
-    email: "michael@creative-tim.com",
-    job: "Programator",
-    org: "Developer",
-    online: true,
-    date: "24/12/08",
-  },
-  {
-    img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
-    name: "Richard Gran",
-    email: "richard@creative-tim.com",
-    job: "Manager",
-    org: "Executive",
-    online: false,
-    date: "04/10/21",
-  },
-];
-
+};
 const BlogTableSection = () => {
+  const [postArr, setPostArr] = useState([]);
+  useEffect(() => {
+    fetch("/api/blogPost", options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setPostArr(data);
+      });
+  }, []);
   return (
     <Card className="text-white mt-5" color="transparent" variant="gradient">
       <CardHeader
@@ -145,32 +108,38 @@ const BlogTableSection = () => {
             </tr>
           </thead>
           <tbody>
-            {TABLE_ROWS.map(
-              ({ img, name, email, job, org, online, date }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
+            {postArr.length > 0 &&
+              postArr.map(({ fileInfo, fileName }, index) => {
+                const { title, date, skills, cover_image, viewed, content } =
+                  fileInfo;
+                const isLast = index === postArr.length - 1;
                 const classes = isLast
                   ? "p-4"
                   : "p-4 border-b border-blue-gray-50";
 
                 return (
-                  <tr key={name}>
+                  <tr key={index}>
                     <td className={classes}>
                       <div className="flex items-center gap-3">
-                        <Avatar src={img} alt={name} size="sm" />
+                        <Avatar
+                          src={`/images/${cover_image}`}
+                          alt={name}
+                          size="sm"
+                        />
                         <div className="flex flex-col">
                           <Typography
                             variant="small"
                             color="white"
                             className="font-normal"
                           >
-                            {name}
+                            {title}
                           </Typography>
                           <Typography
                             variant="small"
                             color="white"
                             className="font-normal opacity-70"
                           >
-                            {email}
+                            {""}
                           </Typography>
                         </div>
                       </div>
@@ -182,47 +151,24 @@ const BlogTableSection = () => {
                           color="white"
                           className="font-normal"
                         >
-                          {job}
-                        </Typography>
-                        <Typography
-                          variant="small"
-                          color="white"
-                          className="font-normal opacity-70"
-                        >
-                          {org}
+                          {skills}
                         </Typography>
                       </div>
                     </td>
-                    <td className={classes}>
-                      <div className="w-max">
-                        <Chip
-                          variant="ghost"
-                          size="sm"
-                          value={online ? "online" : "offline"}
-                          color={online ? "green" : "blue-gray"}
-                        />
-                      </div>
-                    </td>
+
                     <td className={classes}>
                       <Typography
                         variant="small"
-                        color="blue-gray"
+                        color="white"
                         className="font-normal"
                       >
                         {date}
                       </Typography>
                     </td>
-                    <td className={classes}>
-                      <Tooltip content="Edit User">
-                        <IconButton variant="text">
-                          <PencilIcon className="h-4 w-4" />
-                        </IconButton>
-                      </Tooltip>
-                    </td>
+                    <td className={classes}>{viewed}</td>
                   </tr>
                 );
-              }
-            )}
+              })}
           </tbody>
         </table>
       </CardBody>
