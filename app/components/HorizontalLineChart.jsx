@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +11,7 @@ import {
   Colors,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,6 +21,7 @@ ChartJS.register(
   Legend,
   Colors
 );
+
 const options = {
   indexAxis: "y",
   responsive: true,
@@ -64,7 +66,21 @@ const data = {
 const HorizontalLineChart = () => {
   return (
     <div className="w-[300px] h-[300px]">
-      <Bar options={options} data={data} width={200} height={200} />
+      <Bar
+        options={options}
+        data={data}
+        width={200}
+        height={200}
+        onClick={(e) => {
+          console.log(e);
+        }}
+      />
+      <div className="flex justify-center">
+        <InformationCircleIcon className="w-5 h-5" />
+        <p className="text-blue-600 dark:text-blue-gray-200">
+          click chart to see details
+        </p>
+      </div>
     </div>
   );
 };

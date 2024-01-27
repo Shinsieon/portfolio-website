@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { AcademicCapIcon, BookOpenIcon } from "@heroicons/react/24/solid";
+import {
+  AcademicCapIcon,
+  BookOpenIcon,
+  DocumentTextIcon,
+} from "@heroicons/react/24/solid";
 
 import {
   Chart,
@@ -66,10 +70,31 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     component: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
-      </ul>
+      <div className="p-3 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-start gap-5 pt-5">
+          <Education
+            icon={<DocumentTextIcon className="h-7 w-7" />}
+            name={"AFPK"}
+            timeLine={"2013.03.02 ~ 2016.02.04"}
+            detail={"재무설계사, ASSOCIATE FINANCIAL PLANNER KOREA"}
+            link={"https://www.fpsbkorea.org/?mnu_usn=18"}
+          />
+          <Education
+            icon={<AcademicCapIcon className="h-7 w-7" />}
+            name={"Certified Fund Investment Advisor"}
+            timeLine={"2016.03.02 ~ 2022.02.04"}
+            detail={"펀드투자권유자문인력"}
+            link={"https://license.kofia.or.kr/main/main.do"}
+          />
+          <Education
+            icon={<AcademicCapIcon className="h-7 w-7" />}
+            name={"Certified Fund Investment Advisor"}
+            timeLine={"2016.03.02 ~ 2022.02.04"}
+            detail={"증권투자권유자문인력"}
+            link={"https://license.kofia.or.kr/main/main.do"}
+          />
+        </div>
+      </div>
     ),
   },
 ];

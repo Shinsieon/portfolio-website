@@ -5,7 +5,7 @@ const Education = ({ icon, name, detail, timeLine, link }) => {
   return (
     <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 text-left">
       {icon}
-      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white text-nowrap">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white text-wrap">
         {name}
       </h5>
       <p class="mb-1 font-normal text-gray-500 dark:text-gray-400">{detail}</p>
@@ -25,9 +25,9 @@ const Education = ({ icon, name, detail, timeLine, link }) => {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M1 5h12m0 0L9 1m4 4L9 9"
           />
         </svg>
