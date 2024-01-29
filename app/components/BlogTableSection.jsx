@@ -130,7 +130,7 @@ const BlogTableSection = () => {
                           <Typography
                             variant="small"
                             color="white"
-                            className="font-normal"
+                            className="font-normal cursor-pointer"
                           >
                             {title}
                           </Typography>
