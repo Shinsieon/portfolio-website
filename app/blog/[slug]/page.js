@@ -11,10 +11,7 @@ import Image from "next/image";
 const postsDirectory = join(process.cwd(), "app/blog/posts");
 
 export default async function Page({ params }) {
-  const { title, date, content } = await getPostData(
-    postsDirectory,
-    params.slug
-  );
+  const { title, date, content } = await getPostData(params.slug);
   return (
     <article className="flex min-h-screen flex-col px-12  ">
       <div className="container mx-auto px-12 py-12 text-white  font-ios">

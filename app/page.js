@@ -16,7 +16,7 @@ export default function Home() {
         <Navbar />
         <div className="container mx-auto px-12 py-20 scrollbar-hide">
           <HeroSection />
-          <AchievementsSection />
+          {/* <AchievementsSection /> */}
           <BlogSection />
           {/* <AboutSection /> */}
           <ProjectsSection />

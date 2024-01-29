@@ -18,6 +18,7 @@ import {
   Tab,
   Avatar,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 const TABS = [
   {
@@ -127,13 +128,14 @@ const BlogTableSection = () => {
                           size="sm"
                         />
                         <div className="flex flex-col">
-                          <Typography
+                          <Link
                             variant="small"
                             color="white"
-                            className="font-normal cursor-pointer"
+                            className="font-normal"
+                            href={`/blog/${fileName.replace(".md", "")}`}
                           >
                             {title}
-                          </Typography>
+                          </Link>
                           <Typography
                             variant="small"
                             color="white"

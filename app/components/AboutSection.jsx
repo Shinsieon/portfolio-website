@@ -75,21 +75,21 @@ const TAB_DATA = [
           <Education
             icon={<DocumentTextIcon className="h-7 w-7" />}
             name={"AFPK"}
-            timeLine={"2013.03.02 ~ 2016.02.04"}
+            timeLine={"2019.07.28"}
             detail={"재무설계사, ASSOCIATE FINANCIAL PLANNER KOREA"}
             link={"https://www.fpsbkorea.org/?mnu_usn=18"}
           />
           <Education
             icon={<AcademicCapIcon className="h-7 w-7" />}
             name={"Certified Fund Investment Advisor"}
-            timeLine={"2016.03.02 ~ 2022.02.04"}
+            timeLine={"2022.07.14(22-011385)"}
             detail={"펀드투자권유자문인력"}
             link={"https://license.kofia.or.kr/main/main.do"}
           />
           <Education
             icon={<AcademicCapIcon className="h-7 w-7" />}
             name={"Certified Fund Investment Advisor"}
-            timeLine={"2016.03.02 ~ 2022.02.04"}
+            timeLine={"2022.05.19(22-007057)"}
             detail={"증권투자권유자문인력"}
             link={"https://license.kofia.or.kr/main/main.do"}
           />
