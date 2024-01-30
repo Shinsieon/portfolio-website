@@ -19,6 +19,7 @@ import {
 import DoughnutChart from "./DoughnutChart";
 import HorizontalLineChart from "./HorizontalLineChart";
 import Education from "./Education";
+import PostCard from "./PostCard";
 Chart.register(
   ArcElement,
   BarElement,
@@ -49,7 +50,7 @@ const TAB_DATA = [
       <div className="p-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <Education
-            icon={<BookOpenIcon className="h-7 w-7" />}
+            icon={<AcademicCapIcon className="h-7 w-7" />}
             name={"Digital Media Highschool"}
             timeLine={"2013.03.02 ~ 2016.02.04"}
             detail={"Hacking defence"}
@@ -93,6 +94,17 @@ const TAB_DATA = [
             detail={"증권투자권유자문인력"}
             link={"https://license.kofia.or.kr/main/main.do"}
           />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Blog",
+    id: "blog",
+    component: (
+      <div className="p-3 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-start gap-5 pt-5">
+          <PostCard />
         </div>
       </div>
     ),

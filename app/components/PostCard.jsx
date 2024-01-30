@@ -33,7 +33,7 @@ const PostCard = () => {
         </a>
       </div>
       <div className="flow-root">
-        <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-wrap">
+        <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-wrap text-left">
           The place where I note what I&apos;ve learned and the things I&apos;ve
           been up to.
         </p>
