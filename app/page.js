@@ -13,7 +13,7 @@ export default function Home() {
         {/* <Navbar /> */}
         <div className="container mx-auto px-12 py-20 scrollbar-hide">
           <HeroSection />
-          <ProjectsSection />
+
           <EmailSection />
         </div>
       </main>

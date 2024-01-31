@@ -20,6 +20,7 @@ import DoughnutChart from "./DoughnutChart";
 import HorizontalLineChart from "./HorizontalLineChart";
 import Education from "./Education";
 import PostCard from "./PostCard";
+import ProjectsSection from "./ProjectsSection";
 Chart.register(
   ArcElement,
   BarElement,
@@ -109,6 +110,17 @@ const TAB_DATA = [
       </div>
     ),
   },
+  {
+    title: "Projects",
+    id: "projects",
+    component: (
+      <div className="p-3 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-start gap-5 pt-5">
+          <ProjectsSection />
+        </div>
+      </div>
+    ),
+  },
 ];
 
 const AboutSection = () => {
@@ -122,7 +134,7 @@ const AboutSection = () => {
   };
 
   return (
-    <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 h-[400px]">
+    <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mt-5 pb-5">
       <ul className="flex flex-wrap -mb-px">
         {TAB_DATA.map((item, idx) => {
           return (
