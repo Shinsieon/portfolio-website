@@ -21,6 +21,7 @@ import HorizontalLineChart from "./HorizontalLineChart";
 import Education from "./Education";
 import PostCard from "./PostCard";
 import ProjectsSection from "./ProjectsSection";
+import ContactSection from "./ContactSection";
 Chart.register(
   ArcElement,
   BarElement,
@@ -117,6 +118,17 @@ const TAB_DATA = [
       <div className="p-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <ProjectsSection />
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Contact",
+    id: "contact",
+    component: (
+      <div className="p-3 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-start gap-5 pt-5">
+          <ContactSection />
         </div>
       </div>
     ),
