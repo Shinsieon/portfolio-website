@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import Skeleton from "./Skeleton";
+import Link from "next/link";
 const options = {
   method: "GET",
   headers: {
@@ -57,10 +58,13 @@ const PostCard = () => {
                         alt="blog image"
                       />
                     </div>
-                    <div className="flex-1 min-w-0 ms-4">
-                      <p className="text-sm font-medium text-gray-900 truncate dark:text-white text-left">
+                    <div className="flex-1 min-w-0 ms-4 text-left">
+                      <Link
+                        href={`/blog/${fileName.replace(".md", "")}`}
+                        className="text-sm font-medium text-gray-900 truncate dark:text-white text-left"
+                      >
                         {title}
-                      </p>
+                      </Link>
                       <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-left">
                         {skills}
                       </p>

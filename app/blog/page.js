@@ -1,13 +1,18 @@
-import BlogHeaderSection from "../components/BlogHeaderSection";
-import BlogTableSection from "../components/BlogTableSection";
+"use client";
+import { ThemeProvider } from "next-themes";
+
+import ThemeButton from "../components/ThemeButton";
+import BlogSection from "../components/BlogSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212] px-12">
-      <div className="container mx-auto px-12">
-        <BlogHeaderSection />
-        <BlogTableSection />
-      </div>
-    </main>
+    <ThemeProvider attribute="class">
+      <main className="flex flex-col ">
+        <ThemeButton></ThemeButton>
+        <div className="container mx-auto px-12 py-20 scrollbar-hide">
+          <BlogSection />
+        </div>
+      </main>
+    </ThemeProvider>
   );
 }

@@ -5,7 +5,7 @@ import AboutSection from "./AboutSection";
 import { DocumentArrowDownIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
-const HeroSection = () => {
+const PortfolioSection = () => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12 font-ios">
@@ -32,25 +32,8 @@ const HeroSection = () => {
           </Link>
           <AboutSection />
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
-        >
-          {/* <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] relative">
-            <Image
-              src="/images/profile-pic.png"
-              alt="profile image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            />
-          </div> */}
-        </motion.div>
       </div>
     </section>
   );
 };
-export default HeroSection;
+export default PortfolioSection;

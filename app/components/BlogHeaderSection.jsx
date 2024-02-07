@@ -13,22 +13,17 @@ const BlogHeaderSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h3 className="text-white mb-4 text-2xl sm:text-3xl lg:text-5xl lg:leading-normal font-extrabold">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             <TypeAnimation
               sequence={["Bono Space, Dev Blog", 1000]}
               wrapper="span"
               speed={5}
               repeat={Infinity}
             />
-          </h3>
-          <span className="text-gray-300">
-            <TypeAnimation
-              sequence={["Welcome and be happy coders :)", 1000]}
-              wrapper="span"
-              speed={5}
-              repeat={Infinity}
-            />
-          </span>
+          </h1>
+          <p className="mb-6 text-lg text-gray-500 lg:text-xl dark:text-gray-400">
+            {"Welcome and be happy coders :)"}
+          </p>
         </motion.div>
       </div>
     </section>

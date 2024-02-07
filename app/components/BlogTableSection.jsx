@@ -59,135 +59,88 @@ const BlogTableSection = () => {
       });
   }, []);
   return (
-    <Card className="text-white mt-5" color="transparent" variant="gradient">
-      <CardHeader
-        floated={false}
-        shadow={false}
-        className="rounded py-2 border-white"
-        color="transparent"
-      >
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <Tabs value="all" className="w-full md:w-max">
-            <TabsHeader>
-              {TABS.map(({ label, value }) => (
-                <Tab key={value} value={value}>
-                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
-                </Tab>
-              ))}
-            </TabsHeader>
-          </Tabs>
-          <div className="w-full md:w-72">
-            <Input
-              color="white"
-              label="Search"
-              icon={<MagnifyingGlassIcon className="h-5 w-5 text-white" />}
-            />
-          </div>
-        </div>
-      </CardHeader>
-      <CardBody className="overflow-scroll px-0 scrollbar-hide whitespace-nowrap">
-        <table className="mt-4 w-full min-w-max table-auto text-left ">
-          <thead>
-            <tr>
-              {TABLE_HEAD.map((head, index) => (
-                <th
-                  key={head}
-                  className="cursor-pointer border-y border-white p-4 transition-colors"
-                >
-                  <Typography
-                    variant="small"
-                    color="white"
-                    className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
-                  >
-                    {head}{" "}
-                    {index !== TABLE_HEAD.length - 1 && (
-                      <ChevronUpDownIcon strokeWidth={2} className="h-4 w-4" />
-                    )}
-                  </Typography>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {postArr.length > 0 &&
-              postArr.map(({ fileInfo, fileName }, index) => {
-                const { title, date, skills, cover_image, viewed, content } =
-                  fileInfo;
-                const isLast = index === postArr.length - 1;
-                const classes = isLast
-                  ? "p-4"
-                  : "p-4 border-b border-blue-gray-50";
-
-                return (
-                  <tr key={index}>
-                    <td className={classes}>
-                      <div className="flex items-center gap-3">
-                        <Avatar
-                          src={`/images/${cover_image}`}
-                          alt={name}
-                          size="sm"
-                        />
-                        <div className="flex flex-col">
-                          <Link
-                            variant="small"
-                            color="white"
-                            className="font-normal"
-                            href={`/blog/${fileName.replace(".md", "")}`}
-                          >
-                            {title}
-                          </Link>
-                          <Typography
-                            variant="small"
-                            color="white"
-                            className="font-normal opacity-70"
-                          >
-                            {""}
-                          </Typography>
-                        </div>
-                      </div>
-                    </td>
-                    <td className={classes}>
-                      <div className="flex flex-col">
-                        <Typography
-                          variant="small"
-                          color="white"
-                          className="font-normal"
-                        >
-                          {skills}
-                        </Typography>
-                      </div>
-                    </td>
-
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="white"
-                        className="font-normal"
-                      >
-                        {date}
-                      </Typography>
-                    </td>
-                    <td className={classes}>{viewed}</td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
-      </CardBody>
-      <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-        <Typography variant="small" color="white" className="font-normal">
-          Page 1 of 10
-        </Typography>
-        <div className="flex gap-2">
-          <Button variant="outlined" size="sm" color="cyan">
-            Previous
-          </Button>
-          <Button variant="outlined" size="sm" color="cyan">
-            Next
-          </Button>
-        </div>
-      </CardFooter>
-    </Card>
+    <div className="overflow-x-auto shadow-md sm:rounded-lg">
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              Product name
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Color
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Category
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Price
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th
+              scope="row"
+              className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              Apple MacBook Pro 17"
+            </th>
+            <td className="px-6 py-4">Silver</td>
+            <td className="px-6 py-4">Laptop</td>
+            <td className="px-6 py-4">$2999</td>
+            <td className="px-6 py-4">
+              <a
+                href="#"
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                Edit
+              </a>
+            </td>
+          </tr>
+          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <th
+              scope="row"
+              className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              Microsoft Surface Pro
+            </th>
+            <td className="px-6 py-4">White</td>
+            <td className="px-6 py-4">Laptop PC</td>
+            <td className="px-6 py-4">$1999</td>
+            <td className="px-6 py-4">
+              <a
+                href="#"
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                Edit
+              </a>
+            </td>
+          </tr>
+          <tr className="bg-white dark:bg-gray-800">
+            <th
+              scope="row"
+              className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              Magic Mouse 2
+            </th>
+            <td className="px-6 py-4">Black</td>
+            <td className="px-6 py-4">Accessories</td>
+            <td className="px-6 py-4">$99</td>
+            <td className="px-6 py-4">
+              <a
+                href="#"
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                Edit
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

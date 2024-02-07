@@ -1,5 +1,5 @@
 "use client";
-import HeroSection from "./components/HeroSection";
+import PortfolioSection from "./components/PortfolioSection";
 import { ThemeProvider } from "next-themes";
 import ThemeButton from "./components/ThemeButton";
 
@@ -10,7 +10,7 @@ export default function Home() {
         <ThemeButton></ThemeButton>
         {/* <Navbar /> */}
         <div className="container mx-auto px-12 py-20 scrollbar-hide">
-          <HeroSection />
+          <PortfolioSection />
         </div>
       </main>
     </ThemeProvider>
