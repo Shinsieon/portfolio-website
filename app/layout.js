@@ -1,3 +1,4 @@
+import NavBar from "./components/NavBar";
 import "./globals.css";
 
 export const metadata = {
@@ -8,10 +9,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body
-        className="bg-[#ECEFF1] dark:bg-[#121212]"
+        className="bg-[#ECEFF1] dark:bg-[#121212] scrollbar-hide"
         suppressHydrationWarning={true}
       >
-        {children}
+        <NavBar>{children}</NavBar>
       </body>
     </html>
   );
