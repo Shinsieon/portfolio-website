@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Avatar } from "@material-tailwind/react";
 import Link from "next/link";
+import Skeleton from "./Skeleton";
 
 const TABLE_HEAD = ["Title", "Skills", "Created", "Viewed"];
 const options = {
@@ -35,7 +36,7 @@ const BlogTableSection = () => {
           </tr>
         </thead>
         <tbody>
-          {postArr.length > 0 &&
+          {postArr ? (
             postArr.map(({ fileInfo, fileName }, index) => {
               const { title, date, skills, cover_image, viewed, content } =
                 fileInfo;
@@ -94,7 +95,12 @@ const BlogTableSection = () => {
                   </td>
                 </tr>
               );
-            })}
+            })
+          ) : (
+            <div className="py-3 sm:py-4">
+              <Skeleton />
+            </div>
+          )}
         </tbody>
       </table>
     </div>

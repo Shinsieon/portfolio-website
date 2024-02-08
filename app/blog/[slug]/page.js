@@ -13,43 +13,45 @@ const postsDirectory = join(process.cwd(), "app/blog/posts");
 export default async function Page({ params }) {
   const { title, date, content } = await getPostData(params.slug);
   return (
-    <article className="flex min-h-screen flex-col px-12  ">
-      <div className="container mx-auto px-12 py-12 text-white  font-ios">
-        <div className="w-full h-10 my-10">
-          <h2 className="text-4xl font-extrabold dark:text-white mb-2">
+    <main className="flex flex-col ">
+      <div className="container mx-auto px-10 py-12 font-ios">
+        <div className="w-full h-10 my-20">
+          <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             {title}
-          </h2>
-          <p className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-5">
-            {date}
-          </p>
+            <span class="text-xl text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              {date}
+            </span>
+          </h1>
         </div>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]} // Allows us to have embedded HTML tags in our markdown
           components={{
             h1(props) {
               return (
-                <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                <h2 class="text-4xl font-extrabold dark:text-white mb-4">
                   {props.children}
-                </h1>
+                </h2>
               );
             },
-            blockquote({ children, ...props }) {
+            blockquote(props) {
               return (
-                <blockquote className="bg-blue-gray-300" {...props}>
-                  {children}
+                <blockquote class="text-xl italic font-semibold text-left text-gray-900 dark:text-white">
+                  <p>{props.children}</p>
                 </blockquote>
               );
             },
             em(props) {
               return (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold font-sans px-1 rounded">
-                  {props.children}
-                </button>
+                <span class="mb-4 font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+                  <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                    {props.children}
+                  </span>
+                </span>
               );
             },
             p(props) {
               return (
-                <p className="mb-3 text-gray-100 dark:text-warmGray-50">
+                <p class="mb-3 text-gray-500 dark:text-gray-400">
                   {props.children}
                 </p>
               );
@@ -94,7 +96,7 @@ export default async function Page({ params }) {
           {content}
         </ReactMarkdown>
       </div>
-    </article>
+    </main>
   );
 }
 export async function generateStaticParams() {
