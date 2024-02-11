@@ -51,30 +51,39 @@ const PostSection = ({ title, date, content }) => {
         components={{
           h1(props) {
             return (
-              <h2 className="text-4xl font-extrabold dark:text-white my-5">
+              <h2 className="text-4xl font-extrabold dark:text-white">
                 {props.children}
               </h2>
             );
           },
           h2(props) {
             return (
-              <h2 className="text-3xl font-extrabold dark:text-white my-5">
+              <h2 className="text-2xl font-extrabold dark:text-white my-5">
                 {props.children}
               </h2>
             );
           },
           h3(props) {
             return (
-              <h3 className="text-2xl font-extrabold dark:text-white my-5">
+              <h3 className="text-xl font-extrabold dark:text-white my-5">
                 {props.children}
               </h3>
+            );
+          },
+          hr(props) {
+            return (
+              <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+                {props.children}
+              </hr>
             );
           },
 
           blockquote(props) {
             return (
-              <blockquote className="text-xl italic font-semibold text-left text-gray-900 dark:text-white">
-                <p>{props.children}</p>
+              <blockquote className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                <p className="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
+                  {props.children}
+                </p>
               </blockquote>
             );
           },
@@ -159,7 +168,7 @@ const PostSection = ({ title, date, content }) => {
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>
-                  <span>{props.children}</span>
+                  <span className="font-bold text-xl">{props.children}</span>
                 </li>
               </ul>
             );
