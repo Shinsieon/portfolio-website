@@ -1,5 +1,5 @@
 import React from "react";
-const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
+const ProjectCard = ({ imgUrl, title, description }) => {
   return (
     <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
