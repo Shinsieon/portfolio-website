@@ -13,15 +13,15 @@ export default async function Page({ params }) {
 }
 export async function generateStaticParams() {
   const feed = await prisma.post.findMany({
-    where: { published: true },
+    where: { published: false },
   });
   console.log(feed);
-  return {
-    props: { feed },
-    revalidate: 10,
-  };
-  // const fileNames = fs.readdirSync(postsDirectory);
-  // return fileNames.map((file: any) => ({
-  //   slug: file.slug,
-  // }));
+  // return {
+  //   props: { feed },
+  //   revalidate: 10,
+  // };
+  const fileNames = fs.readdirSync(postsDirectory);
+  return fileNames.map((file: any) => ({
+    slug: file.slug,
+  }));
 }
