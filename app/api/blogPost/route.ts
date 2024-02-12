@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import { join } from "path";
-import { getPostData } from "../../blog/[slug]/page";
+import { getPostData } from "../../lib/post";
 export async function GET(req, res) {
   const dir = join(process.cwd(), "app/blog/posts");
   const filenames = fs.readdirSync(dir);

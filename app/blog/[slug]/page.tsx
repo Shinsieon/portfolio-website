@@ -1,8 +1,8 @@
 import fs from "fs";
 import { join } from "path";
 
-import matter from "gray-matter";
 import PostSection from "../../components/PostSection";
+import { getPostData } from "../../lib/post";
 
 const postsDirectory = join(process.cwd(), "app/blog/posts");
 
@@ -15,18 +15,4 @@ export async function generateStaticParams() {
   return fileNames.map((file: any) => ({
     slug: file.slug,
   }));
-}
-
-export async function getPostData(id) {
-  const fullPath = join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-  return {
-    title: data.title,
-    date: data.date,
-    skills: data.skills,
-    cover_image: data.cover_image,
-    viewed: data.viewed,
-    content,
-  };
 }
