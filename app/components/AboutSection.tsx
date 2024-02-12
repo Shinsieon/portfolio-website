@@ -152,7 +152,7 @@ const AboutSection = () => {
           return (
             <li className="me-2" key={idx}>
               <button
-                onClick={(e) => {
+                onClick={(e: any) => {
                   e.preventDefault();
                   handleTabChange(e.target.innerHTML.toLowerCase());
                 }}

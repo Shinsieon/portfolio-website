@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BlogHeaderSection from "../components/BlogHeaderSection";
-import BlogTableSection from "../components/BlogTableSection";
+import BlogHeaderSection from "./BlogHeaderSection";
+import BlogTableSection from "./BlogTableSection";
 const BlogSection = () => {
   return (
     <section className="lg:py-16" id="blog">

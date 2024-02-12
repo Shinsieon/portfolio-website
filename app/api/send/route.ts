@@ -13,14 +13,7 @@ export async function POST(req, res) {
       from: email,
       to: [fromEmail],
       subject: subject,
-      react: (
-        <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
-          <p>{message}</p>
-        </>
-      ),
+      text: "",
     });
     return NextResponse.json(data);
   } catch (error) {

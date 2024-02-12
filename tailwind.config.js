@@ -12,11 +12,6 @@ module.exports = withMT({
     fontFamily: {
       ios: ["ios"],
     },
-    colors: {
-      ...colors,
-      primary: colors.blue,
-      secondary: colors.red,
-    },
     extends: {
       colors: {
         primary: {

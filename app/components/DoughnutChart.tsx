@@ -15,28 +15,26 @@ const doughnutData = {
   ],
 };
 const doughnutOptions = {
-  plugins: {
-    responsive: true,
-    legend: {
-      display: true,
-      position: "bottom",
-      labels: {
-        // This more specific font property overrides the global property
-        font: {
-          size: 12,
-        },
-      },
-    },
-    title: {
-      display: true,
-      text: "Language I Love",
+  responsive: true,
+  legend: {
+    display: true,
+    position: "bottom",
+    labels: {
+      // This more specific font property overrides the global property
       font: {
-        size: 16,
+        size: 12,
       },
     },
-    colors: {
-      forceOverride: true,
+  },
+  title: {
+    display: true,
+    text: "Language I Love",
+    font: {
+      size: 16,
     },
+  },
+  colors: {
+    forceOverride: true,
   },
 };
 

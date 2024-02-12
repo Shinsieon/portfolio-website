@@ -4,8 +4,15 @@ import { motion } from "framer-motion";
 import { DocumentArrowDownIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import AboutSection from "./components/AboutSection";
+import { sql } from "@vercel/postgres";
 
+const getFunc = async () => {
+  const { rows } = await sql`show tables;`;
+  return rows;
+};
 export default function Home() {
+  //console.log(process.env.POSTGRES_URL);
+  //console.log(getFunc());
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">

@@ -72,7 +72,7 @@ const PostSection = ({ title, date, content }) => {
           },
           hr(props) {
             return (
-              <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+              <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
                 {props.children}
               </hr>
             );
@@ -104,9 +104,9 @@ const PostSection = ({ title, date, content }) => {
             );
           },
 
-          code({ node, inline, className, children, ...props }) {
+          code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
-            return !inline && match ? (
+            return match ? (
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag="div"

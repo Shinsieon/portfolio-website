@@ -52,18 +52,19 @@ const BlogTableSection = () => {
                     <div className="flex items-center gap-3">
                       <Avatar
                         src={`/images/${cover_image}`}
-                        alt={name}
+                        alt={fileName || ""}
+                        placeholder={""}
                         size="sm"
                       />
                       <div className="flex flex-col">
                         <Link
-                          variant="small"
                           className="font-normal"
                           href={`/blog/${fileName.replace(".md", "")}`}
                         >
                           {title}
                         </Link>
                         <Typography
+                          placeholder={""}
                           variant="small"
                           className="font-normal opacity-70"
                         >
@@ -74,19 +75,28 @@ const BlogTableSection = () => {
                   </th>
                   <td className="p-4">
                     <div className="flex flex-col">
-                      <Typography variant="small" className="font-normal">
+                      <Typography
+                        placeholder={""}
+                        variant="small"
+                        className="font-normal"
+                      >
                         {skills}
                       </Typography>
                     </div>
                   </td>
 
                   <td className="p-4">
-                    <Typography variant="small" className="font-normal">
+                    <Typography
+                      placeholder={""}
+                      variant="small"
+                      className="font-normal"
+                    >
                       {date}
                     </Typography>
                   </td>
                   <td className="p-4">
                     <Typography
+                      placeholder={""}
                       variant="small"
                       className="font-normal text-center"
                     >
