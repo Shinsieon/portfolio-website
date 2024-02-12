@@ -23,14 +23,13 @@ ChartJS.register(
 );
 
 const options = {
-  indexAxis: "y",
+  indexAxis: "y" as const,
   responsive: true,
   elements: {
     bar: {
       borderWidth: 2,
     },
   },
-  responsive: true,
   plugins: {
     legend: {
       display: false,
