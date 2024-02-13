@@ -22,7 +22,7 @@ const ZoomedInImage = ({ clickHandler, imageUrl }) => {
     </div>
   );
 };
-const PostSection = ({ title, date, content }) => {
+const PostSection = ({ title, date, content, viewed }) => {
   const [zoomIn, setZoomIn] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
 
@@ -36,9 +36,9 @@ const PostSection = ({ title, date, content }) => {
       <div className="w-full h-10 mb-20">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           {title}
-          <span className="text-xl text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+          <small className="text-xl ms-2 font-semibold text-gray-500 dark:text-gray-400">
             {date}
-          </span>
+          </small>
         </h1>
       </div>
       {zoomIn ? (
@@ -72,7 +72,7 @@ const PostSection = ({ title, date, content }) => {
           },
           hr(props) {
             return (
-              <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+              <hr className="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700">
                 {props.children}
               </hr>
             );
@@ -80,10 +80,8 @@ const PostSection = ({ title, date, content }) => {
 
           blockquote(props) {
             return (
-              <blockquote className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
-                <p className="text-base italic font-medium leading-relaxed text-gray-900 dark:text-white">
-                  {props.children}
-                </p>
+              <blockquote className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800 text-base italic font-medium leading-relaxed">
+                {props.children}
               </blockquote>
             );
           },
@@ -98,7 +96,7 @@ const PostSection = ({ title, date, content }) => {
           },
           p(props) {
             return (
-              <p className="mb-3 text-gray-500 dark:text-gray-300">
+              <p className="mb-3 text-gray-700 dark:text-gray-300 text-lg">
                 {props.children}
               </p>
             );
@@ -107,19 +105,23 @@ const PostSection = ({ title, date, content }) => {
           code({ node, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
-              <SyntaxHighlighter
-                language={match[1]}
-                PreTag="div"
-                className="mockup-code scrollbar-thin scrollbar-track-base-content/5 scrollbar-thumb-base-content/40 scrollbar-track-rounded-md scrollbar-thumb-rounded"
-                showLineNumbers={true}
-                useInlineStyles={true}
-                {...props}
-                style={dracula}
-              >
-                {String(children).replace(/\n$/, "")}
-              </SyntaxHighlighter>
+              <div className="my-2">
+                <SyntaxHighlighter
+                  language={match[1]}
+                  PreTag="div"
+                  className="mockup-code scrollbar-thin scrollbar-track-base-content/5 scrollbar-thumb-base-content/40 scrollbar-track-rounded-md scrollbar-thumb-rounded"
+                  showLineNumbers={true}
+                  useInlineStyles={true}
+                  {...props}
+                  style={dracula}
+                >
+                  {String(children).replace(/\n$/, "")}
+                </SyntaxHighlighter>{" "}
+              </div>
             ) : (
-              <code {...props}>{children}</code>
+              <code {...props} className="my-2">
+                {children}
+              </code>
             );
           },
           img: (image) => {
@@ -151,7 +153,7 @@ const PostSection = ({ title, date, content }) => {
 
           li: (props) => {
             return (
-              <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400 my-4">
+              <ul className="space-y-4 text-left text-gray-700 dark:text-gray-400 my-4">
                 <li className="flex items-center space-x-3 rtl:space-x-reverse">
                   <svg
                     className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
@@ -162,9 +164,9 @@ const PostSection = ({ title, date, content }) => {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M1 5.917 5.724 10.5 15 1.5"
                     />
                   </svg>

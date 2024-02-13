@@ -8,9 +8,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Post {
+model Visit {
   id        String     @default(cuid()) @id
-  title     String
-  content   String?
-  published Boolean @default(false)
+  viewed    Int
 }

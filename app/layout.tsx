@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body
-        className="bg-[#ECEFF1] dark:bg-[#121212] scrollbar-hide"
+        className="bg-[#ECEFF1] dark:bg-gray-900 scrollbar-hide"
         suppressHydrationWarning={true}
       >
         <NavBar>{children}</NavBar>

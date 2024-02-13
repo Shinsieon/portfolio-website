@@ -26,7 +26,7 @@ const BlogTableSection = () => {
   return (
     <div className="overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             {TABLE_HEAD.map((head, index) => (
               <th key={index} className="cursor-pointer px-6 py-3 text-left">
@@ -37,12 +37,11 @@ const BlogTableSection = () => {
         </thead>
         <tbody>
           {postArr ? (
-            postArr.map(({ fileInfo, fileName }, index) => {
-              const { title, date, skills, cover_image, viewed, content } =
-                fileInfo;
+            postArr.map(({ fileInfo, fileName, viewed }, index) => {
+              const { title, date, skills, cover_image, content } = fileInfo;
               return (
                 <tr
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                   key={index}
                 >
                   <th
@@ -56,9 +55,9 @@ const BlogTableSection = () => {
                         placeholder={""}
                         size="sm"
                       />
-                      <div className="flex flex-col">
+                      <div className="flex flex-col ">
                         <Link
-                          className="font-normal"
+                          className="font-normal text-base"
                           href={`/blog/${fileName.replace(".md", "")}`}
                         >
                           {title}
