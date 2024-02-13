@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import Skeleton from "./Skeleton";
 import Link from "next/link";
+import Image from "next/image";
 const options = {
   method: "GET",
   headers: {
@@ -52,7 +53,7 @@ const PostCard = () => {
                 <li className="py-3 sm:py-4" key={index}>
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
+                      <Image
                         className="w-8 h-8 rounded-full"
                         src={`/images/${cover_image}`}
                         alt="blog image"

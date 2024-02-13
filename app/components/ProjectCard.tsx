@@ -1,9 +1,14 @@
+import Image from "next/image";
 import React from "react";
 const ProjectCard = ({ imgUrl, title, description }) => {
   return (
     <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-        <img className="rounded-t-lg w-[300px] h-[200px]" src={imgUrl} alt="" />
+        <Image
+          className="rounded-t-lg w-[300px] h-[200px]"
+          src={imgUrl}
+          alt=""
+        />
       </a>
       <div className="p-5 h-[180px] relative">
         <a href="#">

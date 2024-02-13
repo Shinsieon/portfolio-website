@@ -8,6 +8,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="r_m0EEK6mbjStYggwq2kM_YuQ8Ab3BpZGY0mnDHeWkM"
+        />
+      </head>
       <body
         className="bg-[#ECEFF1] dark:bg-gray-900 scrollbar-hide"
         suppressHydrationWarning={true}
