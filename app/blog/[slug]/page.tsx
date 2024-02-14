@@ -28,7 +28,7 @@ export default async function Page({ params }) {
       title={title}
       date={date}
       content={content}
-      viewed={feed.viewed || 1}
+      viewed={feed?.viewed || 1}
     />
   );
 }

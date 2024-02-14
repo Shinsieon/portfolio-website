@@ -46,7 +46,7 @@ const PostCard = () => {
         >
           {postArr ? (
             postArr.map(({ fileInfo, fileName }, index) => {
-              if (index > 5) return;
+              if (index > 4) return;
               const { title, date, skills, cover_image, viewed, content } =
                 fileInfo;
               return (
@@ -54,7 +54,9 @@ const PostCard = () => {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <Image
-                        className="w-8 h-8 rounded-full"
+                        width={40}
+                        height={40}
+                        className=" rounded-full"
                         src={`/images/${cover_image}`}
                         alt="blog image"
                       />

@@ -5,7 +5,9 @@ const ProjectCard = ({ imgUrl, title, description }) => {
     <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <Image
-          className="rounded-t-lg w-[300px] h-[200px]"
+          width={300}
+          height={200}
+          className="rounded-t-lg"
           src={imgUrl}
           alt=""
         />
