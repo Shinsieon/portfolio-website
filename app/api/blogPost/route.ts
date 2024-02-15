@@ -9,10 +9,11 @@ export async function GET(req, res) {
   const sendObj = [];
   const feed = await prisma.visit.findMany();
   for (const file of filenames) {
+    const found = feed.find((f) => f.id === file.split(".")[0]);
     sendObj.push({
       fileName: file,
       fileInfo: await getPostData(file.split(".")[0]),
-      viewed: feed.find((f) => f.id === file.split(".")[0])["viewed"],
+      viewed: found ? found["viewed"] : 1,
     });
   }
 
