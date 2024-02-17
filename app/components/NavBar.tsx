@@ -9,9 +9,7 @@ const NavBar = ({ children }) => {
       <main className="flex flex-col font-ios">
         <ThemeButton></ThemeButton>
         {/* <Navbar /> */}
-        <div className="container mx-auto px-12 py-20 scrollbar-hide">
-          {children}
-        </div>
+        <div className="container mx-auto px-12 py-20">{children}</div>
       </main>
     </ThemeProvider>
   );

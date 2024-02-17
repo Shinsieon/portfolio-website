@@ -126,11 +126,9 @@ const PostSection = ({ title, date, content, viewed }) => {
           },
           img: (image) => {
             return (
-              <Image
+              <img
                 src={image.src || ""}
                 alt={image.alt || ""}
-                width={500}
-                height={400}
                 onClick={() => {
                   onImgClick(image.src);
                 }}
@@ -139,7 +137,7 @@ const PostSection = ({ title, date, content, viewed }) => {
             );
           },
           a: (props) => {
-            let imgComp = () => <div></div>;
+            let imgComp = () => null;
 
             if (props.href.includes("youtube"))
               imgComp = () => {

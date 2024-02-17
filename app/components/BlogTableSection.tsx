@@ -22,21 +22,21 @@ const BlogTableSection = () => {
         console.log(data);
         setPostArr(data);
       });
-  }, []);
+  }, postArr);
   return (
     <div className="overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             {TABLE_HEAD.map((head, index) => (
-              <th key={index} className="cursor-pointer px-6 py-3 text-left">
+              <th key={index} className="px-6 py-3 text-left">
                 {head}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {postArr ? (
+          {postArr.length > 0 ? (
             postArr.map(({ fileInfo, fileName, viewed }, index) => {
               const { title, date, skills, cover_image, content } = fileInfo;
               return (
@@ -106,9 +106,11 @@ const BlogTableSection = () => {
               );
             })
           ) : (
-            <div className="py-3 sm:py-4">
-              <Skeleton />
-            </div>
+            <tr>
+              <td colSpan={4}>
+                <Skeleton />
+              </td>
+            </tr>
           )}
         </tbody>
       </table>
