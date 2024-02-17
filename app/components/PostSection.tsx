@@ -139,33 +139,33 @@ const PostSection = ({ title, date, content, viewed }) => {
             );
           },
           a: (props) => {
-            let imgComp = null;
+            let imgComp = () => <div></div>;
 
             if (props.href.includes("youtube"))
               imgComp = () => {
-                const src_ = props.href.split("v=")[1];
+                const src_ =
+                  "https://img.youtube.com/vi/" +
+                  props.href.split("v=")[1] +
+                  "/mqdefault.jpg";
                 return (
-                  <Image
+                  <img
                     src={src_}
                     title="YouTube Video"
                     alt="YouTube Video"
-                    width={300}
-                    height={300}
+                    className="rounded"
                   />
                 );
               };
             return (
-              <div>
-                <a
-                  href={props.href}
-                  target="_blank"
-                  className="inline-flex items-center justify-center p-2 my-4 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  <ArrowRightCircleIcon width={50} />
-                  <span className="w-full">{props.children}</span>
-                </a>
-                {imgComp ? imgComp : ""}
-              </div>
+              <a
+                href={props.href}
+                target="_blank"
+                className="inline-flex items-center justify-center p-2 my-4 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                <ArrowRightCircleIcon width={50} />
+                <span className="w-full">{props.children}</span>
+                {imgComp()}
+              </a>
             );
           },
 
