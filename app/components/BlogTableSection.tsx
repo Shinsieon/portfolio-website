@@ -29,7 +29,11 @@ const BlogTableSection = () => {
             ...item.fileInfo.skills.split(","),
           ];
         });
-        const uniqueSkillsOptions = [...new Set<String>(skillsOptions)]; // 중복 제거
+        const uniqueSkillsOptions = [
+          ...new Set<String>(
+            skillsOptions.map((item) => item.toLocaleLowerCase())
+          ),
+        ]; // 중복 제거
         setSelectOptions(uniqueSkillsOptions);
       } catch (error) {
         console.error("Error fetching data:", error);
