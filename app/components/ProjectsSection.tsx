@@ -16,33 +16,33 @@ const projectsData = [
     id: 2,
     title: "MTS 채팅 서버 구축",
     description: "NodeJs Chat Server for MTS Service",
-    image: "/images/projects/2.png",
+    image: "/images/nodejs_icon.png",
     tag: ["All", "Web"],
-    previewUrl: "/projects/chat",
+    previewUrl: "/blog/17",
   },
   {
     id: 3,
     title: "MTS Push 서버 구축",
     description: "NodeJS Push Server and Admin for MTS Service",
-    image: "/images/projects/3.png",
+    image: "/images/nodejs_icon.png",
     tag: ["All", "Web"],
-    previewUrl: "/",
+    previewUrl: "/blog/5",
   },
   {
     id: 4,
     title: "아파트 매물 알리미",
     description: "NestJS Auto Scrapper of Apartment price Service",
-    image: "/images/projects/4.png",
+    image: "/images/nest_icon.jpg",
     tag: ["All", "Web"],
-    previewUrl: "/",
+    previewUrl: "/blog/4",
   },
   {
     id: 5,
     title: "깨워줘요 앱",
     description: "SwiftUI Subway Alarm App",
-    image: "/images/projects/5.png",
+    image: "/images/swiftui_icon.png",
     tag: ["All", "Mobile"],
-    previewUrl: "/",
+    previewUrl: "/blog/8",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const projectsData = [
 const ProjectsSection = () => {
   return (
     <section id="projects">
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <ul className="grid md:grid-cols-3 gap-8 md:gap-12 h-16">
         {projectsData.map((project, index) => (
           <motion.li
             key={index}
@@ -69,6 +69,7 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
+              previewUrl={project.previewUrl}
             />
           </motion.li>
         ))}

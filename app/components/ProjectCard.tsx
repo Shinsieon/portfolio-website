@@ -1,19 +1,19 @@
 import Image from "next/image";
 import React from "react";
-const ProjectCard = ({ imgUrl, title, description }) => {
+const ProjectCard = ({ imgUrl, title, description, previewUrl }) => {
   return (
-    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
       <a href="#">
         <Image
           width={300}
           height={200}
-          className="rounded-t-lg"
+          className="rounded-t-lg h-64"
           src={imgUrl}
           alt=""
         />
       </a>
       <div className="p-5 h-[180px] relative">
-        <a href="#">
+        <a href={previewUrl}>
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
@@ -38,7 +38,7 @@ const ProjectCard = ({ imgUrl, title, description }) => {
               clip-rule="evenodd"
             />
           </svg>
-          View Source
+          View Post
         </button>
       </div>
     </div>
