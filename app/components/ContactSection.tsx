@@ -28,7 +28,7 @@ const ContactSection = () => {
 
     const response = await fetch(endpoint, options);
     const resData = await response.json();
-
+    console.log(response.status);
     if (response.status === 200) {
       console.log("Message sent.");
       setEmailSubmitted(true);
@@ -46,7 +46,7 @@ const ContactSection = () => {
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <form action="#" className="space-y-5">
+        <form action="#" className="space-y-5" onSubmit={handleSubmit}>
           <div>
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
               Your email
