@@ -23,7 +23,7 @@ const projectsData = [
   {
     id: 3,
     title: "MTS Push 서버 구축",
-    description: "NodeJS Push Server and Admin for MTS Service",
+    description: "NodeJS Push Server and Admin for MTS",
     image: "/images/nodejs_icon.png",
     tag: ["All", "Web"],
     previewUrl: "/blog/5",
@@ -31,7 +31,7 @@ const projectsData = [
   {
     id: 4,
     title: "아파트 매물 알리미",
-    description: "NestJS Auto Scrapper of Apartment price Service",
+    description: "NestJS Auto Scrapper of Apartment price",
     image: "/images/nest_icon.jpg",
     tag: ["All", "Web"],
     previewUrl: "/blog/4",
@@ -57,7 +57,7 @@ const projectsData = [
 const ProjectsSection = () => {
   return (
     <section id="projects">
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-12 h-16">
+      <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project, index) => (
           <motion.li
             key={index}

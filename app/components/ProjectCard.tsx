@@ -7,12 +7,12 @@ const ProjectCard = ({ imgUrl, title, description, previewUrl }) => {
         <Image
           width={300}
           height={200}
-          className="rounded-t-lg h-64"
+          className="rounded-t-lg w-full h-52"
           src={imgUrl}
           alt=""
         />
       </a>
-      <div className="p-5 h-[180px] relative">
+      <div className="p-5 relative">
         <a href={previewUrl}>
           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
