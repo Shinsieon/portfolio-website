@@ -58,12 +58,19 @@ const PostSection = ({ title, date, content, viewed }) => {
           },
           h2(props) {
             return (
-              <h2 className="text-2xl font-extrabold dark:text-white my-5">
+              <h2 className="text-3xl font-extrabold dark:text-white my-5">
                 {props.children}
               </h2>
             );
           },
           h3(props) {
+            return (
+              <h3 className="text-2xl font-extrabold dark:text-white my-5">
+                {props.children}
+              </h3>
+            );
+          },
+          h4(props) {
             return (
               <h3 className="text-xl font-extrabold dark:text-white my-5">
                 {props.children}
