@@ -213,7 +213,7 @@ const BlogTableSection = () => {
           </tbody>
         </table>
       </div>
-      <ul className="flex items-center h-8 md:h-10 text-sm md:text-base">
+      <ul className="flex items-center mt-3 h-8 md:h-10 text-sm md:text-base">
         <li>
           <a
             href="#"
