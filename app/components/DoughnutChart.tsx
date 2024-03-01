@@ -42,14 +42,12 @@ const doughnutOptions = {
 
 const DoughnutChart = () => {
   return (
-    <div className="w-[300px] h-[300px]">
-      <Doughnut
-        data={doughnutData}
-        options={doughnutOptions}
-        width={200}
-        height={200}
-      />
-    </div>
+    <Doughnut
+      data={doughnutData}
+      options={doughnutOptions}
+      width={300}
+      height={200}
+    />
   );
 };
 

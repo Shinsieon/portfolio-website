@@ -64,23 +64,21 @@ const data = {
 
 const HorizontalLineChart = () => {
   return (
-    <div className="w-[300px] h-[300px]">
-      <Bar
-        options={options}
-        data={data}
-        width={200}
-        height={200}
-        onClick={(e) => {
-          console.log(e);
-        }}
-      />
-      <div className="flex justify-center">
-        <InformationCircleIcon className="w-5 h-5" />
-        <p className="text-blue-600 dark:text-blue-gray-200">
-          click chart to see details
-        </p>
-      </div>
-    </div>
+    <Bar
+      options={options}
+      data={data}
+      width={200}
+      height={200}
+      onClick={(e) => {
+        console.log(e);
+      }}
+    />
+    // <div className="flex justify-center">
+    //   <InformationCircleIcon className="w-5 h-5" />
+    //   <p className="text-blue-600 dark:text-blue-gray-200">
+    //     click chart to see details
+    //   </p>
+    // </div>
   );
 };
 

@@ -9,7 +9,9 @@ const NavBar = ({ children }) => {
       <main className="flex flex-col font-ios">
         <ThemeButton></ThemeButton>
         {/* <Navbar /> */}
-        <div className="container mx-auto px-12 py-20">{children}</div>
+        <div className="container px-4 md:px-12 lg:px-12 py-5 md:py-20 w-full">
+          {children}
+        </div>
       </main>
     </ThemeProvider>
   );

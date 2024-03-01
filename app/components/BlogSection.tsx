@@ -5,12 +5,12 @@ import BlogTableSection from "./BlogTableSection";
 const BlogSection = () => {
   return (
     <section id="blog">
-      <div className="grid grid-cols-1">
+      <div className="">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="place-self-center text-center sm:text-left justify-self-start w-full"
+          className="place-self-center sm:text-left justify-self-start"
         >
           {" "}
           <BlogHeaderSection />

@@ -3,6 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Typography, Avatar, Input } from "@material-tailwind/react";
 import Link from "next/link";
 import Skeleton from "./Skeleton";
+import {
+  BackwardIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/24/solid";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const TABLE_HEAD = ["Title", "Skills", "Created", "Viewed"];
 
@@ -86,110 +92,16 @@ const BlogTableSection = () => {
   };
   return (
     <div>
-      <form className="w-full flex justify-end gap-5">
-        <ul className="flex items-center -space-x-px h-14 text-base">
-          <li>
-            <a
-              href="#"
-              className="flex items-center justify-center px-4 h-14 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              onClick={() => paginate(currentPage - 1)}
-            >
-              <span className="sr-only">Previous</span>
-              <svg
-                className="w-3 h-3 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 1 1 5l4 4"
-                />
-              </svg>
-            </a>
-          </li>
-          {slicePagination(
-            Array.from({
-              length: Math.ceil(filteredData.length / itemsPerPage),
-            }),
-            currentPage
-          ).map((_, index) =>
-            currentPage === index + 1 ? (
-              <li key={index}>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-4 w-12 h-14 leading-tight text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-                  onClick={() => paginate(index + 1)}
-                >
-                  {index + 1}
-                </a>
-              </li>
-            ) : (
-              <li key={index}>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-3 w-12 h-14 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                  onClick={() => paginate(index + 1)}
-                >
-                  {index + 1}
-                </a>
-              </li>
-            )
-          )}
-
-          <li>
-            <a
-              href="#"
-              className="flex items-center justify-center px-4 h-14 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-              onClick={() => paginate(currentPage + 1)}
-            >
-              <span className="sr-only">Next</span>
-              <svg
-                className="w-3 h-3 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 9 4-4-4-4"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <div className="pb-4  dark:bg-gray-900">
-          <label className="sr-only">Search</label>
+      <form className="grid grid-cols-3 gap-2">
+        <div className="pb-4 col-span-2 dark:bg-gray-900">
           <div className="relative">
             <div className="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
+              <MagnifyingGlassIcon width={15} />
             </div>
             <input
               type="text"
               id="table-search"
-              className="block ps-10 h-14 text-lg text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block w-full pl-12 h-8 md:h-10 text-xm md:text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search for posts"
               onChange={handleSearch}
             />
@@ -197,8 +109,7 @@ const BlogTableSection = () => {
         </div>
 
         <select
-          id="skills"
-          className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-14 text-lg"
+          className="col-span-1 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-8 md:h-10 text-sm md:text-lg"
           onChange={handleSelectChange}
         >
           <option value="" selected>
@@ -213,7 +124,7 @@ const BlogTableSection = () => {
       </form>
       <div className="overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-xs md:text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th key={index} className="px-6 py-3 text-left">
@@ -233,18 +144,18 @@ const BlogTableSection = () => {
                   >
                     <th
                       scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                      className="px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
                     >
                       <div className="flex items-center gap-3">
                         <Avatar
                           src={`/images/${cover_image}`}
                           alt={fileName || ""}
                           placeholder={""}
-                          size="sm"
+                          size="xs"
                         />
                         <div className="flex flex-col ">
                           <Link
-                            className="font-normal text-base"
+                            className="font-normal text-xs md:text-base"
                             href={`/blog/${fileName.replace(".md", "")}`}
                           >
                             {title}
@@ -302,6 +213,55 @@ const BlogTableSection = () => {
           </tbody>
         </table>
       </div>
+      <ul className="flex items-center h-8 md:h-10 text-sm md:text-base">
+        <li>
+          <a
+            href="#"
+            className="flex items-center justify-center px-4 h-8 md:h-10 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={() => paginate(currentPage - 1)}
+          >
+            <ChevronLeftIcon width={15} />
+          </a>
+        </li>
+        {slicePagination(
+          Array.from({
+            length: Math.ceil(filteredData.length / itemsPerPage),
+          }),
+          currentPage
+        ).map((_, index) =>
+          currentPage === index + 1 ? (
+            <li key={index}>
+              <a
+                href="#"
+                className="flex items-center justify-center px-4 w-12 h-8 md:h-10 leading-tight text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+                onClick={() => paginate(index + 1)}
+              >
+                {index + 1}
+              </a>
+            </li>
+          ) : (
+            <li key={index}>
+              <a
+                href="#"
+                className="flex items-center justify-center px-3 w-12 h-8 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                onClick={() => paginate(index + 1)}
+              >
+                {index + 1}
+              </a>
+            </li>
+          )
+        )}
+
+        <li>
+          <a
+            href="#"
+            className="flex items-center justify-center px-4 h-8 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            onClick={() => paginate(currentPage + 1)}
+          >
+            <ChevronRightIcon width={15} />
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };
