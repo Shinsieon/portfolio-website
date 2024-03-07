@@ -7,21 +7,21 @@ import AboutSection from "./components/AboutSection";
 
 export default function Home() {
   return (
-    <section className="py-2">
+    <section>
       <div>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="place-self-center sm:text-left justify-self-start"
+          className="sm:text-left "
         >
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Hello I am Sieon, <br></br>I Love Clean Codes.
           </h1>
           <p className="mb-6 text-xs text-gray-500 lg:text-xl md:text-lg dark:text-gray-400">
             I observe issues occurring around me and contemplate the best ways
-            to solve them. Programming is my favorite tool, as with just a few
-            lines of code, I can make a better world.
+            to solve them. <br></br>Programming is my favorite tool, as with
+            just a few lines of code, I can make a better world.
           </p>
           <Link
             href="/files/신시언 이력서.pdf"

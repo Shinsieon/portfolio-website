@@ -37,8 +37,8 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     component: (
-      <div className="p-3 rounded-lg">
-        <div className="flex justify-center flex-col md:flex-row">
+      <div className="py-5 rounded-lg">
+        <div className="flex flex-row w-full h-60 md:h-72">
           <DoughnutChart />
           <HorizontalLineChart />
         </div>
@@ -49,7 +49,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     component: (
-      <div className="p-3 rounded-lg">
+      <div className="py-5 rounded-lg">
         <div className="w-full flex justify-start gap-5 pt-5 flex-col md:flex-row lg:flex-row">
           <Education
             icon={<AcademicCapIcon className="h-7 w-7" />}
@@ -73,7 +73,7 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
+      <div className="py-5 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5 flex-col md:flex-row lg:flex-row">
           <Education
             icon={<DocumentTextIcon className="h-7 w-7" />}

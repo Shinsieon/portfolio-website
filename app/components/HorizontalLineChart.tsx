@@ -23,14 +23,15 @@ ChartJS.register(
 );
 
 const options = {
+  maintainAspectRatio: false,
   indexAxis: "y" as const,
-  responsive: true,
   elements: {
     bar: {
       borderWidth: 2,
     },
   },
   plugins: {
+    responsive: false,
     legend: {
       display: false,
     },
@@ -49,6 +50,11 @@ const options = {
         display: false,
       },
     },
+    // y: {
+    //   ticks: {
+    //     display: false,
+    //   },
+    // },
   },
 };
 const data = {
@@ -64,21 +70,9 @@ const data = {
 
 const HorizontalLineChart = () => {
   return (
-    <Bar
-      options={options}
-      data={data}
-      width={200}
-      height={200}
-      onClick={(e) => {
-        console.log(e);
-      }}
-    />
-    // <div className="flex justify-center">
-    //   <InformationCircleIcon className="w-5 h-5" />
-    //   <p className="text-blue-600 dark:text-blue-gray-200">
-    //     click chart to see details
-    //   </p>
-    // </div>
+    <div className="w-1/2">
+      <Bar options={options} data={data} />
+    </div>
   );
 };
 
