@@ -104,7 +104,7 @@ const TAB_DATA = [
     title: "Blog",
     id: "blog",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
+      <div className="py-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <PostCard />
         </div>
@@ -115,7 +115,7 @@ const TAB_DATA = [
     title: "Projects",
     id: "projects",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
+      <div className="py-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <ProjectsSection />
         </div>

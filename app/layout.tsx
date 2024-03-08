@@ -13,7 +13,12 @@ export default function RootLayout({ children }) {
         <meta
           name="google-site-verification"
           //content="r_m0EEK6mbjStYggwq2kM_YuQ8Ab3BpZGY0mnDHeWkM"
+
           content="wgyXgpMHZM9gx6gN7acoFoTPX9RL5Hkk"
+        />
+        <meta
+          name="naver-site-verification"
+          content="68146474f338dfba7095d4e4f04d22d88ac44267"
         />
       </head>
       <body
