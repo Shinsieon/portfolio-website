@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://bonospace.vercel.app/sitemap.xml
