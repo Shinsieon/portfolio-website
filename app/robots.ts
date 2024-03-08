@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/"],
-        disallow: "/private/",
       },
     ],
     sitemap: "https://bonospace.vercel.app/sitemap.xml",
