@@ -22,7 +22,7 @@ const ZoomedInImage = ({ clickHandler, imageUrl }) => {
     </div>
   );
 };
-const PostSection = ({ title, date, content, viewed }) => {
+const PostSection = ({ title, date, content, viewed, secret }) => {
   const [zoomIn, setZoomIn] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
 
@@ -31,7 +31,9 @@ const PostSection = ({ title, date, content, viewed }) => {
     setZoomIn(!zoomIn);
     console.log(zoomIn);
   }
-  return (
+  return secret ? (
+    <h1>비밀글입니다.</h1>
+  ) : (
     <section>
       <div className="w-full h-10 mb-20">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">

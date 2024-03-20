@@ -13,6 +13,7 @@ export async function getPostData(id) {
     skills: data.skills,
     cover_image: data.cover_image,
     viewed: data.viewed,
+    secret: data.secret,
     content,
   };
 }
