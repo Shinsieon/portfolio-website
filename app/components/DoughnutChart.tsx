@@ -16,9 +16,9 @@ const doughnutData = {
 };
 const doughnutOptions = {
   plugins: {
-    responsive: true,
+    responsive: false,
     legend: {
-      display: true,
+      display: false,
       position: "bottom" as const,
       labels: {
         // This more specific font property overrides the global property
@@ -38,17 +38,13 @@ const doughnutOptions = {
       forceOverride: true,
     },
   },
+  maintainAspectRatio: false,
 };
 
 const DoughnutChart = () => {
   return (
-    <div className="w-[300px] h-[300px]">
-      <Doughnut
-        data={doughnutData}
-        options={doughnutOptions}
-        width={200}
-        height={200}
-      />
+    <div className="w-1/2">
+      <Doughnut data={doughnutData} options={doughnutOptions} />
     </div>
   );
 };

@@ -37,8 +37,8 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
-        <div className="w-full flex justify-center">
+      <div className="py-5 rounded-lg">
+        <div className="flex flex-row w-full h-60 md:h-72">
           <DoughnutChart />
           <HorizontalLineChart />
         </div>
@@ -49,8 +49,8 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
-        <div className="w-full flex justify-start gap-5 pt-5">
+      <div className="py-5 rounded-lg">
+        <div className="w-full flex justify-start gap-5 pt-5 flex-col md:flex-row lg:flex-row">
           <Education
             icon={<AcademicCapIcon className="h-7 w-7" />}
             name={"Digital Media Highschool"}
@@ -73,8 +73,8 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
-        <div className="w-full flex justify-start gap-5 pt-5">
+      <div className="py-5 rounded-lg" role="tabpanel">
+        <div className="w-full flex justify-start gap-5 pt-5 flex-col md:flex-row lg:flex-row">
           <Education
             icon={<DocumentTextIcon className="h-7 w-7" />}
             name={"AFPK"}
@@ -104,7 +104,7 @@ const TAB_DATA = [
     title: "Blog",
     id: "blog",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
+      <div className="py-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <PostCard />
         </div>
@@ -115,7 +115,7 @@ const TAB_DATA = [
     title: "Projects",
     id: "projects",
     component: (
-      <div className="p-3 rounded-lg" role="tabpanel">
+      <div className="py-3 rounded-lg" role="tabpanel">
         <div className="w-full flex justify-start gap-5 pt-5">
           <ProjectsSection />
         </div>
@@ -147,7 +147,7 @@ const AboutSection = () => {
 
   return (
     <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mt-5 pb-5">
-      <ul className="flex flex-wrap -mb-px">
+      <ul className="flex overflow-auto scrollbar-hide">
         {TAB_DATA.map((item, idx) => {
           return (
             <li className="me-2" key={idx}>

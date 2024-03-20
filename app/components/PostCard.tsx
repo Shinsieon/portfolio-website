@@ -45,43 +45,43 @@ const PostCard = () => {
           className="divide-y divide-gray-200 dark:divide-gray-700"
         >
           {postArr ? (
-            postArr.map(({ fileInfo, fileName }, index) => {
-              if (index > 4) return;
-              const { title, date, skills, cover_image, viewed, content } =
-                fileInfo;
-              return (
-                <li className="py-3 sm:py-4" key={index}>
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0">
-                      <Image
-                        width={40}
-                        height={40}
-                        className=" rounded-full"
-                        src={`/images/${cover_image}`}
-                        alt="blog image"
-                      />
+            postArr
+              .sort(
+                (a, b) =>
+                  new Date(b.fileInfo.date.replace(/\//g, "-")).getTime() -
+                  new Date(a.fileInfo.date.replace(/\//g, "-")).getTime()
+              )
+              .map(({ fileInfo, fileName }, index) => {
+                if (index > 4) return;
+                const { title, date, skills, cover_image, viewed, content } =
+                  fileInfo;
+                return (
+                  <li className="py-3 sm:py-4" key={index}>
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <Image
+                          width={40}
+                          height={40}
+                          className=" rounded-full"
+                          src={`/images/${cover_image}`}
+                          alt="blog image"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0 ms-4 text-left">
+                        <Link
+                          href={`/blog/${fileName.replace(".md", "")}`}
+                          className="text-sm font-medium text-gray-900 truncate dark:text-white text-left"
+                        >
+                          {title}
+                        </Link>
+                        <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-left">
+                          {skills}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0 ms-4 text-left">
-                      <Link
-                        href={`/blog/${fileName.replace(".md", "")}`}
-                        className="text-sm font-medium text-gray-900 truncate dark:text-white text-left"
-                      >
-                        {title}
-                      </Link>
-                      <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-left">
-                        {skills}
-                      </p>
-                    </div>
-
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white gap-2">
-                      <EyeIcon className="w-5 h-5" />
-
-                      {viewed}
-                    </div>
-                  </div>
-                </li>
-              );
-            })
+                  </li>
+                );
+              })
           ) : (
             <div className="py-3 sm:py-4">
               <Skeleton />
