@@ -16,9 +16,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta
           name="google-site-verification"
-          //content="r_m0EEK6mbjStYggwq2kM_YuQ8Ab3BpZGY0mnDHeWkM"
-
-          content="wgyXgpMHZM9gx6gN7acoFoTPX9RL5Hkk"
+          content="r_m0EEK6mbjStYggwq2kM_YuQ8Ab3BpZGY0mnDHeWkM"
         />
         <meta
           name="naver-site-verification"
