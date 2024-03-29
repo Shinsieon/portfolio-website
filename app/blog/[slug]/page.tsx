@@ -24,11 +24,14 @@ export default async function Page({ params }) {
       },
     });
   return (
-    <PostSection
-      title={title}
-      date={date}
-      content={content}
-      viewed={feed?.viewed || 1}
-    />
+    <div className="max-w-screen-xl flex items-center justify-end mx-auto p-4">
+      <PostSection
+        title={title}
+        date={date}
+        content={content}
+        viewed={feed?.viewed || 1}
+        secret={secret}
+      />
+    </div>
   );
 }

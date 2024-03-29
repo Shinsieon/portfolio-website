@@ -109,12 +109,11 @@ const BlogTableSection = () => {
         </div>
 
         <select
+          defaultValue={"All Skills"}
           className="col-span-1 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-8 md:h-10 text-sm md:text-lg"
           onChange={handleSelectChange}
         >
-          <option value="" selected>
-            All Skills
-          </option>
+          <option value="">All Skills</option>
           {selectOptions.map((option, index) => (
             <option key={index} value={option}>
               {option}
