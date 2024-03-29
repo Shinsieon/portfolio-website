@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import ThemeButton from "./ThemeButton";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const menus = [
   { menuName: "Home", href: "/" },
@@ -11,7 +12,13 @@ const menus = [
   { menuName: "DarkMode" },
 ];
 const NavBar = ({ children }) => {
-  const [selNav, setSelNav] = useState("Home");
+  const nowUrl = usePathname();
+  console.log(nowUrl);
+  const [selNav, setSelNav] = useState(
+    menus.find(
+      (mn) => mn.menuName.toUpperCase() === nowUrl.split("/")[1].toUpperCase()
+    ).menuName
+  );
   return (
     <ThemeProvider attribute="class">
       <main className="flex flex-col font-ios">
