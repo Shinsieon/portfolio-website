@@ -3,7 +3,7 @@ import { getPostData } from "../../lib/post";
 import prisma from "../../lib/prisma";
 
 export default async function Page({ params }) {
-  const { title, date, content } = await getPostData(params.slug);
+  const { title, date, content, secret } = await getPostData(params.slug);
   const feed = await prisma.visit.findUnique({
     where: { id: String(params?.slug) },
   });
@@ -24,13 +24,11 @@ export default async function Page({ params }) {
       },
     });
   return (
-    <div className="max-w-screen-xl flex items-center justify-end mx-auto p-4">
-      <PostSection
-        title={title}
-        date={date}
-        content={content}
-        viewed={feed?.viewed || 1}
-      />
-    </div>
+    <PostSection
+      title={title}
+      date={date}
+      content={content}
+      viewed={feed?.viewed || 1}
+    />
   );
 }
