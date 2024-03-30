@@ -8,17 +8,17 @@ import { usePathname } from "next/navigation";
 
 const menus = [
   { menuName: "Home", href: "/" },
-  { menuName: "Blog", href: "/blog" },
+  //{ menuName: "Blog", href: "/blog" },
   { menuName: "DarkMode" },
 ];
 const NavBar = ({ children }) => {
   const nowUrl = usePathname();
   console.log(nowUrl);
-  const [selNav, setSelNav] = useState(
+  const foundMenu =
     menus.find(
       (mn) => mn.menuName.toUpperCase() === nowUrl.split("/")[1].toUpperCase()
-    ).menuName
-  );
+    )?.menuName || "Home";
+  const [selNav, setSelNav] = useState(foundMenu);
   return (
     <ThemeProvider attribute="class">
       <main className="flex flex-col font-ios">

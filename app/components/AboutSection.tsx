@@ -111,17 +111,17 @@ const TAB_DATA = [
       </div>
     ),
   },
-  {
-    title: "Projects",
-    id: "projects",
-    component: (
-      <div className="py-3 rounded-lg" role="tabpanel">
-        <div className="w-full flex justify-start gap-5 pt-5">
-          <ProjectsSection />
-        </div>
-      </div>
-    ),
-  },
+  // {
+  //   title: "Projects",
+  //   id: "projects",
+  //   component: (
+  //     <div className="py-3 rounded-lg" role="tabpanel">
+  //       <div className="w-full flex justify-start gap-5 pt-5">
+  //         <ProjectsSection />
+  //       </div>
+  //     </div>
+  //   ),
+  // },
   {
     title: "Contact",
     id: "contact",

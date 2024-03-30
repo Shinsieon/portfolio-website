@@ -29,7 +29,7 @@ const PostCard = () => {
         </h5>
 
         <a
-          href="/blog"
+          href="https://sieon-dev.tistory.com/"
           className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
         >
           View all
